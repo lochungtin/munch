@@ -71,11 +71,19 @@ const App = () => {
 	const [filters, setFilters] = useState('');
 	const [selection, setSelection] = useState([-1, -1]);
 
-	let data = [{ name: 'creamy mushroom chicken', ingredients: ['cream', 'mushroom', 'chicken'] }];
+	let data = [
+		{ name: 'creamy mushroom chicken', ingredients: ['cream', 'mushroom', 'chicken'] },
+		{ name: 'creamy mushroom chicken', ingredients: ['cream', 'mushroom', 'chicken'] },
+		{ name: 'creamy mushroom chicken', ingredients: ['cream', 'mushroom', 'chicken'] },
+		{ name: 'creamy mushroom chicken', ingredients: ['cream', 'mushroom', 'chicken'] },
+		{ name: 'creamy mushroom chicken', ingredients: ['cream', 'mushroom', 'chicken'] },
+		{ name: 'creamy mushroom chicken', ingredients: ['cream', 'mushroom', 'chicken'] },
+		{ name: 'creamy mushroom chicken', ingredients: ['cream', 'mushroom', 'chicken'] },
+	];
 
 	if (loggedIn)
 		return (
-			<div className='root'>
+			<div className={'root ' + (filters ? 'rootF' : '')}>
 				<div className='inputRow'>
 					<div className='searchBar'>
 						<input

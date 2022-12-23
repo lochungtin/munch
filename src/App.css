@@ -3,8 +3,11 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	padding: 2rem 0;
-	width: 100vw;
+	height: 100vh;
+}
+
+.rootF {
+	justify-content: flex-start;
 }
 
 .loginContainer {
@@ -16,6 +19,13 @@
 	flex-direction: column;
 	justify-content: space-between;
 	padding: 4rem 0;
+	width: 20rem;
+	height: 12rem;
+}
+
+.loginPswdInput {
+	position: absolute;
+	opacity: 0;
 	width: 20rem;
 	height: 12rem;
 }
@@ -79,8 +89,6 @@
 	align-items: center;
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 1rem;
-	width: 40rem;
 }
 
 .searchBar {
@@ -91,17 +99,6 @@
 	display: flex;
 	justify-content: space-between;
 	padding: 0 1rem;
-	height: 3rem;
-	width: 34rem;
-}
-
-.searchInput {
-	background-color: transparent;
-	border: 0;
-	outline: 0;
-	font-size: 1.25rem;
-	height: 1.5rem;
-	width: 33rem;
 }
 
 .iconImg {
@@ -130,9 +127,6 @@
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 1rem;
-	min-height: 13rem;
-	padding: 1rem 2rem;
-	width: 36rem;
 }
 
 .addTextSide {
@@ -140,27 +134,6 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	padding-left: 3rem;
-	width: 13rem;
-}
-
-.dishNameInput {
-	background-color: transparent;
-	border: 0;
-	outline: 0;
-	font-size: 1.25rem;
-	height: 1.5rem;
-	margin-bottom: 1rem;
-	width: 13rem;
-}
-
-.ingredientInput {
-	background-color: transparent;
-	border: 0;
-	outline: 0;
-	font-size: 1rem;
-	height: 1.2rem;
-	width: 8rem;
 }
 
 .addImageSide {
@@ -168,19 +141,13 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	height: 13rem;
-	width: 16rem;
-}
-
-.imagePreview {
-	width: 10rem;
 }
 
 .uploadButton {
 	color: transparent;
 	outline: 0;
-	width: 10rem;
 }
+
 .uploadButton::-webkit-file-upload-button {
 	visibility: hidden;
 }
@@ -193,22 +160,6 @@
 	content: 'UPLOAD';
 	display: flex;
 	justify-content: center;
-	height: 2rem;
-	width: 10rem;
-}
-
-.recipes {
-	align-items: flex-start;
-	display: flex;
-	justify-content: space-between;
-	width: 40rem;
-}
-
-.list {
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
 }
 
 .cardRoot {
@@ -221,7 +172,6 @@
 	justify-content: flex-start;
 	margin-bottom: 1rem;
 	padding-bottom: 1rem;
-	width: 19.5rem;
 }
 
 .cardSelected {
@@ -230,14 +180,12 @@
 
 .cardName {
 	font-weight: bold;
-	width: 18rem;
 }
 
 .ingredients {
 	align-items: flex-start;
 	display: flex;
 	justify-content: space-between;
-	width: 17rem;
 }
 
 .ingredientList {
@@ -250,19 +198,199 @@
 .ingredientItem {
 	align-items: center;
 	display: flex;
-	height: 1.5rem;
 	justify-content: space-between;
-	width: 7.5rem;
 }
 
 .ingredientDot {
 	background-color: #85c997;
-	border-radius: 0.15rem;
-	height: 0.3rem;
-	width: 0.3rem;
 }
 
-.ingredientName {
-	height: 1rem;
-	width: 7rem;
+@media only screen and (max-width: 768px) {
+	.root {
+		justify-content: flex-start;
+	}
+
+	.inputRow {
+		margin: 1rem 0;
+		width: 90vw;
+	}
+
+	.searchBar {
+		height: 3rem;
+		width: 68vw;
+	}
+
+	.searchInput {
+		font-size: 1rem;
+		height: 1.5rem;
+		width: 68vw;
+	}
+
+	.addRecipeRoot {
+		flex-direction: column-reverse;
+		min-height: 13rem;
+		width: 90vw;
+	}
+
+	.imagePreview {
+		height: 10rem;
+	}
+
+	.uploadButton {
+		width: 40vw;
+	}
+
+	.uploadButton::before {
+		border-radius: 0.5rem;
+		height: 2rem;
+		width: 40vw;
+	}
+
+	.dishNameInput {
+		font-size: 1rem;
+		font-weight: bold;
+		height: 1.5rem;
+		margin-bottom: 1rem;
+		width: 60vw;
+	}
+
+	.ingredientInput {
+		font-size: 1rem;
+		margin-bottom: 0.5rem;
+		width: 60vw;
+	}
+
+	.cardRoot {
+		width: 90vw;
+	}
+
+	.cardName {
+		width: 80vw;
+	}
+
+	.ingredients {
+		width: 75vw;
+	}
+
+	.ingredientItem {
+		height: 1.5rem;
+		width: 35vw;
+	}
+
+	.ingredientDot {
+		border-radius: 0.2rem;
+		height: 0.4rem;
+		width: 0.4rem;
+	}
+
+	.ingredientName {
+		height: 1rem;
+		width: 32vw;
+	}
+}
+
+@media only screen and (min-width: 769px) {
+	.inputRow {
+		margin: 2rem 0;
+		width: 40rem;
+	}
+
+	.searchBar {
+		height: 3rem;
+		width: 34rem;
+	}
+
+	.searchInput {
+		font-size: 1.25rem;
+		height: 1.5rem;
+		width: 33rem;
+	}
+
+	.addRecipeRoot {
+		min-height: 13rem;
+		padding: 1rem 2rem;
+		width: 36rem;
+	}
+
+	.addTextSide {
+		align-items: flex-start;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		padding-left: 3rem;
+		width: 13rem;
+	}
+
+	.dishNameInput {
+		font-size: 1.25rem;
+		height: 1.5rem;
+		margin-bottom: 1rem;
+		width: 13rem;
+	}
+
+	.ingredientInput {
+		font-size: 1rem;
+		height: 1.2rem;
+		width: 8rem;
+	}
+
+	.addImageSide {
+		height: 13rem;
+		width: 16rem;
+	}
+
+	.imagePreview {
+		width: 10rem;
+	}
+
+	.uploadButton {
+		width: 10rem;
+	}
+
+	.uploadButton::before {
+		height: 2rem;
+		width: 10rem;
+	}
+
+	.recipes {
+		align-items: flex-start;
+		display: flex;
+		justify-content: space-between;
+		width: 40rem;
+	}
+
+	.list {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+
+	.cardRoot {
+		width: 19.5rem;
+	}
+
+	.cardName {
+		width: 18rem;
+	}
+
+	.ingredients {
+		width: 17rem;
+	}
+
+	.ingredientItem {
+		height: 1.5rem;
+		width: 7.5rem;
+	}
+
+	.ingredientDot {
+		border-radius: 0.15rem;
+		height: 0.3rem;
+		width: 0.3rem;
+	}
+
+	.ingredientName {
+		height: 1rem;
+		width: 7rem;
+	}
 }
