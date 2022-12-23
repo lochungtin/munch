@@ -77,6 +77,14 @@
 	background-color: #85c997;
 }
 
+.inputRow {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 1rem;
+	width: 40rem;
+}
+
 .searchBar {
 	align-items: center;
 	background-color: rgba(255, 255, 255, 0.6);
@@ -85,9 +93,8 @@
 	display: flex;
 	justify-content: space-between;
 	padding: 0 1rem;
-	margin-bottom: 1rem;
 	height: 3rem;
-	width: 38rem;
+	width: 34rem;
 }
 
 .searchInput {
@@ -96,11 +103,64 @@
 	outline: 0;
 	font-size: 1.25rem;
 	height: 1.5rem;
-	width: 37rem;
+	width: 33rem;
 }
 
-.randomLogo {
+.iconImg {
 	width: 1.5rem;
+}
+
+.addRecipeButton {
+	align-items: center;
+	background-color: rgba(255, 255, 255, 0.6);
+	border-radius: 1rem;
+	box-shadow: 0px 0px 1rem 0.5rem rgba(133, 201, 151, 0.2);
+	display: flex;
+	justify-content: center;
+	height: 3rem;
+	width: 3rem;
+}
+
+.addButtonPressed {
+	background-color: rgba(20, 20, 20, 0.1);
+}
+
+.addRecipeRoot {
+	align-items: flex-start;
+	background-color: rgba(255, 255, 255, 0.6);
+	border-radius: 1rem;
+	display: flex;
+	justify-content: space-between;
+	height: 15rem;
+	padding: 1rem 2rem;
+	width: 36rem;
+}
+
+.addTextSide {
+	align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: 16rem;
+}
+
+.dishNameInput {
+	background-color: transparent;
+	border: 0;
+	outline: 0;
+	font-size: 1.25rem;
+	height: 1.5rem;
+	margin-bottom: 1rem;
+	width: 16rem;
+}
+
+.ingredientInput {
+	background-color: transparent;
+	border: 0;
+	outline: 0;
+	font-size: 1rem;
+	height: 1.2rem;
+	width: 8rem;
 }
 
 .recipes {

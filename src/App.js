@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Login from './components/login';
+import add from './icons/add.svg';
 import random from './icons/dice.svg';
 
 import './App.css';
@@ -47,11 +48,14 @@ const Card = ({ data, selected }) => {
 
 const App = () => {
 	const [loggedIn, setLoggedIn] = useState(false);
+	const [addBoxOut, setToggleAdd] = useState(false);
+	const [newDishName, setNewDishName] = useState('');
+	const [newIngredientList, setNewIngredientList] = useState(['']);
 	const [filters, setFilters] = useState('');
 	const [selection, setSelection] = useState([-1, -1]);
 
 	let data = [
-		{ name: 'creamy mushroom chicken', ingredients: ['chicken', 'mushroom', 'single cream'] },
+		{ name: 'creamy mushroom chicken', ingredients: ['chicken', 'mushroom', 'cream'] },
 		{ name: 'tomato meatballs', ingredients: ['meatballs'] },
 		{ name: 'mince pasta', ingredients: ['mince'] },
 	];
@@ -62,17 +66,61 @@ const App = () => {
 		return (
 			<div className='root'>
 				<div className='content'>
-					<div className='searchBar'>
-						<input
-							className='searchInput'
-							type='text'
-							placeholder={`What's in the fridge?`}
-							onChange={(event) => setFilters(event.target.value)}
-						/>
-						<button onClick={() => setSelection(selectRandom(data.length))}>
-							<img className='randomLogo' src={random} alt='search' />
+					<div className='inputRow'>
+						<div className='searchBar'>
+							<input
+								className='searchInput'
+								type='text'
+								placeholder={`What's in the fridge?`}
+								onChange={(event) => setFilters(event.target.value)}
+							/>
+							<button onClick={() => setSelection(selectRandom(data.length))}>
+								<img className='iconImg' src={random} alt='search' />
+							</button>
+						</div>
+						<button
+							className={'addRecipeButton ' + (addBoxOut ? 'addButtonPressed' : '')}
+							onClick={() => setToggleAdd(!addBoxOut)}>
+							<img className='iconImg' src={add} alt='add' />
 						</button>
 					</div>
+					{addBoxOut ? (
+						<div className='addRecipeRoot'>
+							<div className='addTextSide'>
+								<input
+									className='dishNameInput'
+									type='text'
+									placeholder='Dish name'
+									onChange={(event) => setNewDishName(event.target.value)}
+								/>
+								<div className='ingredientList'>
+									{newIngredientList.map((name, index) => (
+										<div className='ingredientItem' key={index}>
+											<input
+												className='ingredientInput'
+												type='text'
+												placeholder='Add ingredient ...'
+												onChange={(event) => {
+													const update = [...newIngredientList];
+													const text = event.target.value;
+													if (text.length > 0 && text[text.length - 1] === ' ') {
+														if (update[index] && update[update.length - 1]) update.push('');
+													} else if (text.length === 0) {
+														update.splice(index, 1);
+													} else update[index] = text;
+													setNewIngredientList(update);
+												}}
+												value={name}
+											/>
+										</div>
+									))}
+								</div>
+							</div>
+							<div></div>
+						</div>
+					) : (
+						<></>
+					)}
 					{filters !== '' ? (
 						<div className='recipes'>
 							{spltHalf(data).map((splt, lrIndex) => (
