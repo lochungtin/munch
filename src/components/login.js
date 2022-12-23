@@ -48,6 +48,7 @@ const Login = ({ onComplete }) => {
 
 	return (
 		<div className='loginContainer'>
+			<input className='loginPswdInput' type='number' />
 			<div className='loginLogoContainer'>
 				<img className='loginLogo' src={logo} alt='logo' />
 			</div>
