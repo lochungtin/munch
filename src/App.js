@@ -73,12 +73,7 @@ const App = () => {
 
 	let data = [
 		{ name: 'creamy mushroom chicken', ingredients: ['cream', 'mushroom', 'chicken'] },
-		{ name: 'creamy mushroom chicken', ingredients: ['cream', 'mushroom', 'chicken'] },
-		{ name: 'creamy mushroom chicken', ingredients: ['cream', 'mushroom', 'chicken'] },
-		{ name: 'creamy mushroom chicken', ingredients: ['cream', 'mushroom', 'chicken'] },
-		{ name: 'creamy mushroom chicken', ingredients: ['cream', 'mushroom', 'chicken'] },
-		{ name: 'creamy mushroom chicken', ingredients: ['cream', 'mushroom', 'chicken'] },
-		{ name: 'creamy mushroom chicken', ingredients: ['cream', 'mushroom', 'chicken'] },
+		{ name: 'tomato meatballs', ingredients: ['meatballs'] },
 	];
 
 	if (loggedIn)
