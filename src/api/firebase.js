@@ -33,7 +33,7 @@ export const bindEntryData = (setState) => {
 				? Object.entries(data).map(([k, v]) => ({
 						key: v.key,
 						name: v.name,
-						ingredients: new Set(Object.entries(v.ingredients).map(([ki, vi]) => vi)),
+						ingredients: Object.entries(v.ingredients).map(([ki, vi]) => vi),
 				  }))
 				: [],
 		);

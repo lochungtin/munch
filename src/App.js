@@ -7,7 +7,7 @@ import random from './icons/dice.svg';
 import { addEntry, bindEntryData, getImage } from './api/firebase';
 import './App.css';
 
-const localeCapitalise = (text) => text.charAt(0).toUpperCase() + text.slice(1);
+const localeCapitalise = (text) => text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
 
 const allLocaleCapitalise = (text) => text.split(' ').map(localeCapitalise).join(' ');
 
@@ -101,10 +101,9 @@ const App = () => {
 
 	let display = data;
 	if (filters !== 'all' && filters !== '*') {
-		const fltr = filters.split(' ');
+		const fltr = new Set(filters.split(' '));
 		display = data.filter((entry) => {
-			if (fltr.length !== entry.ingredients.size) return false;
-			return fltr.every((word) => entry.ingredients.has(word));
+			return entry.ingredients.every((word) => fltr.has(word));
 		});
 	}
 
