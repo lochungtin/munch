@@ -45,9 +45,9 @@ const App = () => {
 		return (
 			<div className={'root ' + (filters ? 'rootF' : '')}>
 				<SearchBar
-					datLength={data.length}
+					dataLength={data.length}
 					setFilter={setFilter}
-					setSelection={setSelect}
+					setSelect={setSelect}
 					setShowAdd={setShowAdd}
 				/>
 				{showAdd ? <EntryModal /> : <></>}

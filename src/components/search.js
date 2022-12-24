@@ -9,8 +9,9 @@ const rnd = (count) => {
 	return [side * 1, Math.floor(Math.random() * spltLength + 1) - 1];
 };
 
-const SearchBar = ({ dataLength, setFilter, setSelection, setShowAdd }) => {
+const SearchBar = ({ dataLength, setFilter, setSelect, setShowAdd }) => {
 	const [addPressed, setAddPressed] = useState(false);
+
 	return (
 		<div className='inputRow'>
 			<div className='searchBar'>
@@ -20,7 +21,7 @@ const SearchBar = ({ dataLength, setFilter, setSelection, setShowAdd }) => {
 					placeholder={`What's in the fridge?`}
 					onChange={(event) => setFilter(event.target.value)}
 				/>
-				<button onClick={() => setSelection(rnd(dataLength))}>
+				<button onClick={() => setSelect(rnd(dataLength))}>
 					<img className='iconImg' src={random} alt='search' />
 				</button>
 			</div>
