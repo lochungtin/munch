@@ -125,7 +125,6 @@
 	background-color: rgba(255, 255, 255, 0.6);
 	border-radius: 1rem;
 	display: flex;
-	justify-content: space-between;
 	margin-bottom: 1rem;
 }
 
@@ -134,6 +133,18 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
+}
+
+.saveButton {
+	align-items: center;
+	background-color: #85c997;
+	border-radius: 0.5rem;
+	color: white;
+	display: flex;
+	height: 2rem;
+	justify-content: center;
+	font-size: 1rem;
+	width: 5rem;
 }
 
 .addImageSide {
@@ -206,10 +217,6 @@
 }
 
 @media only screen and (max-width: 768px) {
-	.root {
-		justify-content: flex-start;
-	}
-
 	.inputRow {
 		margin: 1rem 0;
 		width: 90vw;
@@ -228,8 +235,24 @@
 
 	.addRecipeRoot {
 		flex-direction: column-reverse;
-		min-height: 13rem;
+		min-height: 22rem;
 		width: 90vw;
+	}
+
+	.addTextSide {
+		align-items: flex-start;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+
+	.addImageSide {
+		height: 13rem;
+	}
+
+	.saveButton {
+		margin: 1rem 0;
+		width: 70vw;
 	}
 
 	.imagePreview {
@@ -237,13 +260,13 @@
 	}
 
 	.uploadButton {
-		width: 40vw;
+		width: 70vw;
 	}
 
 	.uploadButton::before {
 		border-radius: 0.5rem;
 		height: 2rem;
-		width: 40vw;
+		width: 70vw;
 	}
 
 	.dishNameInput {
@@ -266,6 +289,10 @@
 
 	.cardName {
 		width: 80vw;
+	}
+
+	.foodPic {
+		width: 70vw;
 	}
 
 	.ingredients {
@@ -307,6 +334,7 @@
 	}
 
 	.addRecipeRoot {
+		justify-content: space-between;
 		min-height: 13rem;
 		padding: 1rem 2rem;
 		width: 36rem;
@@ -332,6 +360,10 @@
 		font-size: 1rem;
 		height: 1.2rem;
 		width: 8rem;
+	}
+
+	.saveButton {
+		margin: 1rem 0;
 	}
 
 	.addImageSide {
@@ -372,6 +404,10 @@
 
 	.cardName {
 		width: 18rem;
+	}
+
+	.foodPic {
+		height: 10rem;
 	}
 
 	.ingredients {
