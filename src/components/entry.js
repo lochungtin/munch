@@ -27,22 +27,8 @@ const save = (dName, iList, img, reset) => {
 	if (!dName || iList.length === 0) return;
 
 	const ingredients = {};
-	iList.forEach((val, index) => (ingredients[index] = val.toLowerCase()));
+	iList.filter((val) => val.length > 0).forEach((val, index) => (ingredients[index] = val.toLowerCase()));
 	addEntry({ name: dName.toLowerCase(), ingredients }, img).then(reset);
-};
-
-const IngredientInput = ({ index, name, iNames, setINames }) => {
-	return (
-		<div className='ingredientItem'>
-			<input
-				className='ingredientInput'
-				type='text'
-				placeholder='Add ingredient ...'
-				onChange={(event) => foodHandler(index, event.target.value, iNames, setINames)}
-				value={name}
-			/>
-		</div>
-	);
 };
 
 const EntryModal = () => {
@@ -62,13 +48,15 @@ const EntryModal = () => {
 				/>
 				<div className='ingredientList'>
 					{iNames.map((name, index) => (
-						<IngredientInput
-							key={index}
-							index={index}
-							name={name}
-							iNames={[...iNames]}
-							setINames={setINames}
-						/>
+						<div className='ingredientItem' key={index}>
+							<input
+								className='ingredientInput'
+								type='text'
+								placeholder='Add ingredient ...'
+								onChange={(event) => foodHandler(index, event.target.value, [...iNames], setINames)}
+								value={name}
+							/>
+						</div>
 					))}
 				</div>
 				<button
